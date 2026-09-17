@@ -1,0 +1,494 @@
+/* admin/css/admin.css
+ * Hoja de estilos propia e independiente del panel administrativo.
+ * No modifica ni depende de css/styles.css — solo reutiliza los mismos
+ * tonos de marca para que se sienta parte del mismo proyecto.
+ */
+
+:root {
+  --ivory: #FBF8F3;
+  --card: #FFFDF9;
+  --sage: #5C6E5A;
+  --sage-deep: #3F4C3D;
+  --blush: #E8CFC7;
+  --espresso: #3A2E28;
+  --gold: #B8935A;
+  --gold-soft: #D9BE93;
+  --danger: #A6453A;
+  --danger-bg: #F7E7E4;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Libre Franklin', Arial, sans-serif;
+  background: var(--ivory);
+  color: var(--espresso);
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  background: var(--sage-deep);
+  color: var(--ivory);
+}
+
+.admin-brand {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.admin-brand em { color: var(--gold-soft); font-style: italic; }
+
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+}
+
+.view[hidden] { display: none; }
+
+.hint { color: #6b6058; }
+.hint.centered { text-align: center; margin-top: 60px; }
+
+/* ---- Login / acceso denegado ---- */
+.login-card,
+.denied-card {
+  max-width: 380px;
+  margin: 60px auto 0;
+  background: var(--card);
+  border: 1px solid var(--blush);
+  border-radius: 10px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-card h1,
+.denied-card h1 {
+  margin: 0 0 4px;
+  font-size: 22px;
+}
+
+.login-card label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.login-card input {
+  padding: 10px 12px;
+  border: 1px solid var(--blush);
+  border-radius: 6px;
+  font-size: 15px;
+  background: var(--ivory);
+  color: var(--espresso);
+}
+.login-card input:focus {
+  outline: none;
+  border-color: var(--sage);
+}
+
+.btn-primary,
+.btn-secondary {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn-primary {
+  margin-top: 14px;
+  background: var(--sage-deep);
+  color: var(--ivory);
+}
+.btn-primary:hover { background: var(--espresso); }
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--ivory);
+  color: var(--ivory);
+}
+.admin-header .btn-secondary {
+  border-color: rgba(251, 248, 243, 0.5);
+}
+.admin-header .btn-secondary:hover { background: rgba(251, 248, 243, 0.12); }
+
+.denied-card .btn-secondary {
+  border-color: var(--espresso);
+  color: var(--espresso);
+  align-self: flex-start;
+}
+.denied-card .btn-secondary:hover { background: var(--blush); }
+
+/* ---- Corrección de contraste: botones .btn-secondary dentro de los
+ * modales (Cancelar/Cerrar de producto, variante e imágenes) ----
+ * El estilo base de .btn-secondary (arriba) usa var(--ivory) para texto y
+ * borde porque se diseñó para el encabezado oscuro (.admin-header). Dentro
+ * de un modal, cuyo fondo es var(--card) (un blanco cálido casi idéntico a
+ * --ivory), ese mismo botón queda prácticamente invisible: texto y borde
+ * casi del mismo color que el fondo. Este bloque le da el mismo tratamiento
+ * que ya recibían .denied-card y .admin-table (color oscuro con buen
+ * contraste) para que "Cancelar"/"Cerrar" se vean siempre con claridad.
+ */
+.modal-card .btn-secondary {
+  border-color: var(--sage);
+  color: var(--sage-deep);
+}
+.modal-card .btn-secondary:hover { background: var(--ivory); }
+
+.error-text {
+  color: var(--danger);
+  background: var(--danger-bg);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 13px;
+  margin: 6px 0 0;
+}
+
+/* ---- Panel ---- */
+.panel-block {
+  margin-top: 32px;
+}
+.panel-block h2 {
+  font-size: 17px;
+  margin-bottom: 10px;
+  color: var(--sage-deep);
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--blush);
+  border-radius: 8px;
+  background: var(--card);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 560px;
+}
+
+.admin-table th,
+.admin-table td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--blush);
+  white-space: nowrap;
+}
+
+.admin-table th {
+  background: var(--ivory);
+  font-weight: 600;
+  color: var(--sage-deep);
+}
+
+.admin-table tbody tr:last-child td { border-bottom: none; }
+.admin-table tbody tr:hover { background: var(--ivory); }
+
+.status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.status-active {
+  background: #E4ECE3;
+  color: var(--sage-deep);
+}
+.status-inactive {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.success-text {
+  color: var(--sage-deep);
+  background: #E4ECE3;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 13px;
+  margin: 6px 0 0;
+}
+
+.panel-block-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.panel-block-head h2 { margin: 0; }
+
+.btn-primary.small,
+.btn-secondary.small {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+.admin-table .btn-secondary.small {
+  border-color: var(--sage);
+  color: var(--sage-deep);
+  background: transparent;
+}
+.admin-table .btn-secondary.small:hover { background: var(--ivory); }
+
+.admin-table input.active-toggle {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--sage-deep);
+  cursor: pointer;
+}
+
+/* ---- Modal: formulario de producto ---- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(58, 46, 40, 0.45);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px;
+  overflow-y: auto;
+  z-index: 100;
+}
+.modal-overlay[hidden] { display: none; }
+
+.modal-card {
+  background: var(--card);
+  border-radius: 10px;
+  border: 1px solid var(--blush);
+  padding: 28px;
+  width: 100%;
+  max-width: 560px;
+}
+.modal-card h2 {
+  margin: 0 0 16px;
+  font-size: 19px;
+  color: var(--sage-deep);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+.form-row label {
+  font-size: 13px;
+  font-weight: 600;
+}
+.form-row input[type="text"],
+.form-row input[type="number"],
+.form-row select,
+.form-row textarea {
+  padding: 9px 11px;
+  border: 1px solid var(--blush);
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  background: var(--ivory);
+  color: var(--espresso);
+}
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: var(--sage);
+}
+
+.form-row-inline {
+  flex-direction: row;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+/* Etapa 4B: .form-row / .form-row-inline fijan "display: flex" con la misma
+   especificidad CSS que la regla [hidden] del navegador — sin esto, poner
+   el atributo/propiedad "hidden" en una fila (por ejemplo para alternar
+   entre los campos de solo lectura de "Editar categoría" y los campos de
+   texto de "Nueva categoría") no la ocultaba realmente. Con el selector
+   ".form-row[hidden]" (especificidad más alta) queda resuelto para
+   cualquier fila del panel que use "hidden", no solo las de categorías. */
+.form-row[hidden],
+.form-row-inline[hidden] {
+  display: none;
+}
+.form-row-inline > div {
+  flex: 1;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.checkbox-label input { width: 16px; height: 16px; accent-color: var(--sage-deep); }
+
+.id-preview {
+  margin: 0;
+  padding: 8px 11px;
+  background: var(--ivory);
+  border: 1px dashed var(--blush);
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 13px;
+  color: #6b6058;
+}
+
+.price-fieldset {
+  border: 1px solid var(--blush);
+  border-radius: 8px;
+  padding: 14px 16px 2px;
+  margin: 0 0 14px;
+}
+.price-fieldset legend {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--sage-deep);
+  padding: 0 6px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+.form-actions .btn-primary { margin-top: 0; }
+
+/* ---- Acciones en fila de tabla (varios botones lado a lado) ---- */
+.actions-cell {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ---- Modal ancho (gestión de imágenes de variante) ---- */
+.modal-card-wide {
+  max-width: 720px;
+}
+
+/* ---- Lista de imágenes ---- */
+.images-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 14px 0;
+}
+
+.image-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px;
+  border: 1px solid var(--blush);
+  border-radius: 8px;
+  background: var(--ivory);
+  flex-wrap: wrap;
+}
+
+.image-row-thumb {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--blush);
+  background: var(--card);
+  flex-shrink: 0;
+}
+
+.image-row-info {
+  flex: 1;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.image-row-filename {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--espresso);
+  word-break: break-all;
+}
+.image-row-alt,
+.image-row-meta {
+  margin: 0;
+  font-size: 12px;
+  color: #6b6058;
+}
+
+.image-row-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.primary-badge {
+  background: #FBEFD9;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.image-row-actions {
+  flex-shrink: 0;
+}
+
+.images-list-actions {
+  display: flex;
+  gap: 10px;
+  margin: 6px 0 14px;
+}
+
+/* ---- Mini-formulario de agregar/editar imagen (dentro del modal) ---- */
+.image-form-wrap {
+  border-top: 1px solid var(--blush);
+  padding-top: 16px;
+  margin-top: 6px;
+}
+.image-form-wrap h3 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  color: var(--sage-deep);
+}
+
+/* ---- Etapa 4C: filas editables de "Qué incluye" (products.includes) ----
+   El input de texto de cada fila ya recibe el estilo de
+   ".form-row input[type=text]" (arriba) porque vive dentro de un .form-row
+   — aquí solo se define el layout de la fila en sí (input + botón
+   "Eliminar" en una misma línea, que se apilan verticalmente en pantallas
+   angostas). */
+.includes-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.includes-row input[type="text"] {
+  flex: 1;
+  min-width: 140px;
+}
+
+/* ---- Etapa 5: miniatura de la imagen actual en "Contenido del catálogo" ----
+   Solo es una vista previa dentro del Admin (no afecta el catálogo
+   público, que tiene su propia regla en css/styles.css). */
+#ssf-current-image-wrap img {
+  max-width: 160px;
+  display: block;
+  border-radius: 4px;
+  margin-top: 6px;
+}

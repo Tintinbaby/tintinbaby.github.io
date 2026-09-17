@@ -1,0 +1,17 @@
+# Backups locales de trabajo del proyecto (carpetas _backup_*).
+# Se generan automáticamente antes de cada cambio como red de seguridad,
+# pero no forman parte del catálogo publicado y no deben subirse al repositorio.
+_backup_*/
+
+# Documento interno de arquitectura/diseño, no enlazado desde el catálogo ni
+# el Admin. Se mantiene disponible en la copia local del proyecto, pero no
+# debe publicarse en el repositorio público de GitHub.
+fase4-arquitectura.html
+
+# Archivos de entorno/credenciales locales. Actualmente el proyecto no usa
+# ninguno (la única clave en el código es la anon/publishable key de Supabase,
+# que está diseñada para ser pública), pero se excluyen preventivamente por
+# si en el futuro se crea alguno.
+.env
+.env.*
+*.local

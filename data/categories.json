@@ -1,0 +1,50 @@
+[
+  {
+    "id": "sets-bienvenida",
+    "slug": "sets-de-bienvenida",
+    "anchorId": "sets",
+    "order": 1,
+    "active": true,
+    "navLabel": "Sets",
+    "footerLabel": "Sets de Bienvenida",
+    "eyebrow": "Lo más pedido",
+    "heading": "Sets de Bienvenida",
+    "description": "El ajuar completo, bordado a juego y listo para recibir al bebé. Escoges el diseño, los colores y el nombre.",
+    "layout": "simple-grid",
+    "typeHeading": "Elige tu set",
+    "note": "Los nombres bordados en las fotos son de pedidos reales — tu set lleva el nombre que elijas, en el hilo y la tipografía que prefieras.",
+    "sectionModifier": null
+  },
+  {
+    "id": "ajuar",
+    "slug": "ajuar",
+    "anchorId": "ajuar",
+    "order": 2,
+    "active": true,
+    "navLabel": "Ajuar",
+    "footerLabel": "Ajuar",
+    "eyebrow": "Lencería de cuna",
+    "heading": "Para el día a día",
+    "description": "Piezas esenciales de lencería para cuna — pensadas para acompañar los primeros meses con suavidad y buen gusto.",
+    "layout": "variant-carousels",
+    "typeHeading": null,
+    "note": null,
+    "sectionModifier": null
+  },
+  {
+    "id": "accesorios",
+    "slug": "accesorios",
+    "anchorId": "accesorios",
+    "order": 3,
+    "active": true,
+    "navLabel": "Accesorios",
+    "footerLabel": "Accesorios",
+    "eyebrow": "Accesorios",
+    "heading": "Detalles que acompañan",
+    "description": "Complementos personalizados, pensados como regalo o como pieza propia del ajuar del bebé.",
+    "layout": "variant-carousels",
+    "typeHeading": null,
+    "note": null,
+    "sectionModifier": "alt"
+  }
+]

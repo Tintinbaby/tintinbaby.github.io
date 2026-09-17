@@ -1,0 +1,373 @@
+[
+  {
+    "id": "set-corona",
+    "categoryId": "sets-bienvenida",
+    "order": 1,
+    "active": true,
+    "featured": true,
+    "name": "Set Corona",
+    "badge": "Más vendido",
+    "completeLabel": "Set completo · 4 piezas",
+    "description": "Marfil y beige con bordado en hilo dorado. Corona y laurel enmarcando el nombre.",
+    "includes": [
+      "Nido cuna con moño de raso",
+      "Cojín corona bordado",
+      "Cojín de lactancia",
+      "Mantita con pompones"
+    ],
+    "images": [
+      "assets/images/sets/set-corona-01.jpg"
+    ],
+    "imageAlt": "Set de bienvenida Corona en marfil y beige, bordado en hilo dorado",
+    "price": {
+      "mode": "promo",
+      "amount": 275000,
+      "originalAmount": 320000,
+      "currency": "COP"
+    },
+    "ctaLabel": "Pedir este set",
+    "ctaHref": "#contacto",
+    "variants": []
+  },
+  {
+    "id": "set-conejito",
+    "categoryId": "sets-bienvenida",
+    "order": 2,
+    "active": true,
+    "featured": false,
+    "name": "Set Conejito",
+    "badge": "Nuevo",
+    "completeLabel": "Set completo · 6 piezas",
+    "description": "Rosa y beige con estampado de conejitos y bordado en hilo café.",
+    "includes": [
+      "Nido cuna con moño de raso",
+      "Cojín nube bordado",
+      "Cojín de lactancia",
+      "Conejito decorativo",
+      "Mantita a juego",
+      "Toalla con capucha"
+    ],
+    "images": [
+      "assets/images/sets/set-conejito-01.jpg"
+    ],
+    "imageAlt": "Set de bienvenida Conejito en rosa y beige, bordado en hilo café",
+    "price": {
+      "mode": "consult"
+    },
+    "ctaLabel": "Pedir este set",
+    "ctaHref": "#contacto",
+    "variants": []
+  },
+  {
+    "id": "juego-cuna",
+    "categoryId": "ajuar",
+    "order": 1,
+    "active": true,
+    "featured": false,
+    "name": "Juego de cuna",
+    "variants": [
+      {
+        "id": "juego-cuna--diseno-clasico",
+        "name": "Diseño clásico",
+        "description": "Sábana, funda y cobertor en algodón suave, con opción de monograma bordado.",
+        "active": true,
+        "images": [],
+        "imageAlt": "",
+        "placeholderTone": "default",
+        "price": {
+          "mode": "from",
+          "amount": null,
+          "currency": "COP"
+        }
+      },
+      {
+        "id": "juego-cuna--diseno-hoja-bordada",
+        "name": "Diseño hoja bordada",
+        "description": "Bordado natural en tonos suaves, ideal para ambientes neutros.",
+        "active": true,
+        "images": [],
+        "imageAlt": "",
+        "placeholderTone": "sage",
+        "price": {
+          "mode": "from",
+          "amount": null,
+          "currency": "COP"
+        }
+      },
+      {
+        "id": "juego-cuna--diseno-monograma-floral",
+        "name": "Diseño monograma floral",
+        "description": "Iniciales rodeadas de un motivo floral bordado a mano.",
+        "active": true,
+        "images": [],
+        "imageAlt": "",
+        "placeholderTone": "gold",
+        "price": {
+          "mode": "from",
+          "amount": null,
+          "currency": "COP"
+        }
+      },
+      {
+        "id": "juego-cuna--diseno-rayas-artesanales",
+        "name": "Diseño rayas artesanales",
+        "description": "Líneas bordadas en dos tonos, con acabado en ribete contrastante.",
+        "active": true,
+        "images": [],
+        "imageAlt": "",
+        "placeholderTone": "default",
+        "price": {
+          "mode": "from",
+          "amount": null,
+          "currency": "COP"
+        }
+      }
+    ]
+  },
+  {
+    "id": "mantita-arrullo",
+    "categoryId": "ajuar",
+    "order": 2,
+    "active": true,
+    "featured": false,
+    "name": "Mantita arrullo",
+    "variants": [
+      {
+        "id": "mantita-arrullo--diseno-liso-bordado",
+        "name": "Diseño liso bordado",
+        "description": "Ligera y transpirable, ideal para salidas y las primeras siestas fuera de casa.",
+        "active": true,
+        "images": [],
+        "imageAlt": "",
+        "placeholderTone": "sage",
+        "price": {
+          "mode": "from",
+          "amount": null,
+          "currency": "COP"
+        }
+      },
+      {
+        "id": "mantita-arrullo--diseno-con-capucha",
+        "name": "Diseño con capucha",
+        "description": "Capucha bordada a juego, cómoda para cargar y abrigar en salidas.",
+        "active": true,
+        "images": [],
+        "imageAlt": "",
+        "placeholderTone": "gold",
+        "price": {
+          "mode": "from",
+          "amount": null,
+          "currency": "COP"
+        }
+      },
+      {
+        "id": "mantita-arrullo--diseno-doble-tela",
+        "name": "Diseño doble tela",
+        "description": "Combinación de algodón y muselina, con borde bordado en contraste.",
+        "active": true,
+        "images": [],
+        "imageAlt": "",
+        "placeholderTone": "default",
+        "price": {
+          "mode": "from",
+          "amount": null,
+          "currency": "COP"
+        }
+      }
+    ]
+  },
+  {
+    "id": "protector-cuna",
+    "categoryId": "ajuar",
+    "order": 3,
+    "active": true,
+    "featured": false,
+    "name": "Protector de cuna",
+    "variants": [
+      {
+        "id": "protector-cuna--diseno-clasico-acolchado",
+        "name": "Diseño clásico acolchado",
+        "description": "Confeccionado en algodón acolchado, con borde y monograma a juego con el resto del set.",
+        "active": true,
+        "images": [],
+        "imageAlt": "",
+        "placeholderTone": "gold",
+        "price": {
+          "mode": "from",
+          "amount": null,
+          "currency": "COP"
+        }
+      },
+      {
+        "id": "protector-cuna--diseno-nube-bordada",
+        "name": "Diseño nube bordada",
+        "description": "Motivo bordado suave, a juego con la mantita y el juego de cuna.",
+        "active": true,
+        "images": [],
+        "imageAlt": "",
+        "placeholderTone": "default",
+        "price": {
+          "mode": "from",
+          "amount": null,
+          "currency": "COP"
+        }
+      },
+      {
+        "id": "protector-cuna--diseno-ribete-doble",
+        "name": "Diseño ribete doble",
+        "description": "Doble ribete en tono contrastante con monograma central.",
+        "active": true,
+        "images": [],
+        "imageAlt": "",
+        "placeholderTone": "sage",
+        "price": {
+          "mode": "from",
+          "amount": null,
+          "currency": "COP"
+        }
+      }
+    ]
+  },
+  {
+    "id": "manta-personalizada",
+    "categoryId": "accesorios",
+    "order": 1,
+    "active": true,
+    "featured": false,
+    "name": "Manta personalizada",
+    "variants": [
+      {
+        "id": "manta-personalizada--diseno-nombre-clasico",
+        "name": "Diseño nombre clásico",
+        "description": "Pieza de regalo por excelencia — nombre y fecha de nacimiento bordados a mano.",
+        "active": true,
+        "images": [],
+        "imageAlt": "",
+        "placeholderTone": "gold",
+        "price": {
+          "mode": "from",
+          "amount": null,
+          "currency": "COP"
+        }
+      },
+      {
+        "id": "manta-personalizada--diseno-iniciales-grandes",
+        "name": "Diseño iniciales grandes",
+        "description": "Monograma como protagonista, en hilo dorado o en tono a juego con la manta.",
+        "active": true,
+        "images": [],
+        "imageAlt": "",
+        "placeholderTone": "default",
+        "price": {
+          "mode": "from",
+          "amount": null,
+          "currency": "COP"
+        }
+      },
+      {
+        "id": "manta-personalizada--diseno-con-motivo-animal",
+        "name": "Diseño con motivo animal",
+        "description": "Nombre acompañado de un pequeño motivo bordado, ideal para regalo de baby shower.",
+        "active": true,
+        "images": [],
+        "imageAlt": "",
+        "placeholderTone": "sage",
+        "price": {
+          "mode": "from",
+          "amount": null,
+          "currency": "COP"
+        }
+      }
+    ]
+  },
+  {
+    "id": "babero-bordado",
+    "categoryId": "accesorios",
+    "order": 2,
+    "active": true,
+    "featured": false,
+    "name": "Babero bordado",
+    "variants": [
+      {
+        "id": "babero-bordado--diseno-clasico",
+        "name": "Diseño clásico",
+        "description": "Algodón absorbente con cierre en broche y monograma a juego con la lencería.",
+        "active": true,
+        "images": [],
+        "imageAlt": "",
+        "placeholderTone": "default",
+        "price": {
+          "mode": "from",
+          "amount": null,
+          "currency": "COP"
+        }
+      },
+      {
+        "id": "babero-bordado--diseno-doble-tela",
+        "name": "Diseño doble tela",
+        "description": "Reverso impermeable, frente en algodón con bordado central.",
+        "active": true,
+        "images": [],
+        "imageAlt": "",
+        "placeholderTone": "sage",
+        "price": {
+          "mode": "from",
+          "amount": null,
+          "currency": "COP"
+        }
+      },
+      {
+        "id": "babero-bordado--diseno-con-volado",
+        "name": "Diseño con volado",
+        "description": "Borde con volado suave y monograma en el centro.",
+        "active": true,
+        "images": [],
+        "imageAlt": "",
+        "placeholderTone": "gold",
+        "price": {
+          "mode": "from",
+          "amount": null,
+          "currency": "COP"
+        }
+      }
+    ]
+  },
+  {
+    "id": "bolso-maternidad",
+    "categoryId": "accesorios",
+    "order": 3,
+    "active": true,
+    "featured": false,
+    "name": "Bolso de maternidad",
+    "variants": [
+      {
+        "id": "bolso-maternidad--diseno-clasico",
+        "name": "Diseño clásico",
+        "description": "Compartimentos pensados para pañalera, con iniciales bordadas en la solapa.",
+        "active": true,
+        "images": [],
+        "imageAlt": "",
+        "placeholderTone": "sage",
+        "price": {
+          "mode": "from",
+          "amount": null,
+          "currency": "COP"
+        }
+      },
+      {
+        "id": "bolso-maternidad--diseno-con-cambiador",
+        "name": "Diseño con cambiador",
+        "description": "Incluye cambiador plegable a juego, con monograma en la parte frontal.",
+        "active": true,
+        "images": [],
+        "imageAlt": "",
+        "placeholderTone": "gold",
+        "price": {
+          "mode": "from",
+          "amount": null,
+          "currency": "COP"
+        }
+      }
+    ]
+  }
+]

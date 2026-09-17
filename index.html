@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ajuar y accesorios bordados para beb&eacute;, hechos a mano por encargo en Colombia. Sets de bienvenida, lencer&iacute;a de cuna y accesorios personalizados con el nombre del beb&eacute;.">
+<meta property="og:title" content="Tintinbaby &mdash; Ajuar y accesorios bordados para beb&eacute;">
+<meta property="og:description" content="Sets de bienvenida y ajuar bordado a mano, personalizado con el nombre del beb&eacute;.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FBF8F3">
+<link rel="icon" type="image/png" href="assets/images/branding/favicon.png">
+<title>Tintinbaby — Ajuar y accesorios bordados para bebé</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css?v=whatsapp-20260902">
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="logo"><span class="logo-badge" role="img" aria-label="Sello Tintinbaby"></span>tintin<span>baby</span></div>
+    <div class="navlinks" id="navlinks">
+      <!-- Los enlaces de categorías (Sets, Ajuar, Accesorios, ...) se insertan aquí
+           dinámicamente desde data/categories.json — ver js/render.js -->
+      <a href="#personalizacion">Personalización</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <a href="#contacto" class="navcta">Escríbenos</a>
+    <button class="menu-toggle" aria-controls="navlinks" aria-expanded="false" aria-label="Menú">☰</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Colección permanente</span>
+      <h1>Piezas que se <em>bordan</em>,<br>no se fabrican.</h1>
+      <p class="lede">Ajuar y accesorios para bebé hechos a mano, con bordado propio y algodones de primera. Cada pieza lleva el nombre de quien la va a usar.</p>
+      <div class="hero-actions">
+        <a href="#ajuar" class="btn-primary">Ver colección</a>
+        <a href="#personalizacion" class="btn-ghost">Cómo personalizamos →</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="ph-label">
+        <div class="monogram">T</div>
+        <div class="hero-note">Foto de producto insignia — reemplazar</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap hero-strip"><div class="stitch"></div></div>
+
+<section class="strip">
+  <div class="wrap">
+    <div class="strip-item reveal">
+      <span class="num">Materiales</span>
+      <h3>Algodón peinado y lino suave</h3>
+      <p>Telas seleccionadas por su tacto y durabilidad frente al lavado frecuente, pensadas para piel de bebé.</p>
+    </div>
+    <div class="strip-item reveal">
+      <span class="num">Bordado</span>
+      <h3>Diseño propio, puntada por puntada</h3>
+      <p>Cada monograma se digitaliza y borda en nuestro taller — sin plantillas genéricas ni impresión.</p>
+    </div>
+    <div class="strip-item reveal">
+      <span class="num">Entrega</span>
+      <h3>Hecho bajo pedido</h3>
+      <p>Producción cuidada por lote, no en serie. Tiempos de entrega claros desde el momento del pedido.</p>
+    </div>
+  </div>
+</section>
+
+<main id="catalog"></main>
+
+<section class="personalize" id="personalizacion">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Cómo personalizamos</span>
+      <h2>Un nombre, un hilo, una pieza única.</h2>
+      <p>Escoges la pieza, el color de hilo y la tipografía del monograma. Digitalizamos el diseño en nuestro taller y lo bordamos punto por punto — no es impresión ni parche prefabricado.</p>
+      <a href="#contacto" class="btn-primary">Empezar mi pedido</a>
+    </div>
+    <div class="thread-visual reveal">
+      <span>Foto del proceso de bordado — reemplazar</span>
+    </div>
+  </div>
+</section>
+
+<section class="quote-block">
+  <div class="wrap">
+    <blockquote class="reveal">"Cada pieza Tintinbaby está pensada para acompañar, no solo para vestir."</blockquote>
+    <cite>— Filosofía de marca</cite>
+  </div>
+</section>
+
+<footer id="contacto">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo"><span class="logo-badge" role="img" aria-label="Sello Tintinbaby"></span>tintin<span>baby</span></div>
+        <p>Ajuar y accesorios bordados para bebé, hechos por encargo en Colombia.</p>
+      </div>
+      <div>
+        <h4>Colección</h4>
+        <ul id="footer-collection-list">
+          <!-- Los ítems de categorías se insertan aquí dinámicamente desde
+               data/categories.json — ver js/render.js -->
+          <li><a href="#personalizacion">Personalización</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="https://wa.me/573239714689" target="_blank" rel="noopener noreferrer">WhatsApp — +57 323 9714689</a></li>
+          <li><a href="https://www.instagram.com/tintinbaby07" target="_blank" rel="noopener">Instagram @tintinbaby07</a></li>
+          <li>Ubicación — Santa Marta, Magdalena, Colombia</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Atención</h4>
+        <ul>
+          <li>Pedidos por encargo</li>
+          <li>Envíos a nivel nacional</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Tintinbaby. Todos los derechos reservados.</span>
+      <span>Hecho a mano, con hilo y aguja.</span>
+    </div>
+  </div>
+</footer>
+
+<a
+  href="https://wa.me/573239714689"
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Escríbenos por WhatsApp"
+>
+  <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true" focusable="false">
+    <path d="M16.004 3C9.377 3 4 8.373 4 15c0 2.34.66 4.523 1.804 6.383L4 29l7.79-1.766A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3Zm6.98 16.66c-.297.834-1.47 1.53-2.406 1.73-.64.136-1.474.245-4.29-.92-3.6-1.49-5.917-5.14-6.098-5.38-.174-.24-1.465-1.95-1.465-3.72 0-1.77.928-2.64 1.257-3.003.33-.363.72-.454.96-.454.24 0 .48.003.69.013.222.01.52-.084.812.62.298.72 1.014 2.49 1.102 2.67.088.18.147.39.03.63-.118.24-.176.39-.35.6-.176.21-.37.47-.528.63-.176.18-.36.375-.155.735.204.36.91 1.5 1.955 2.43 1.343 1.196 2.475 1.567 2.836 1.744.36.18.57.15.78-.09.21-.24.897-1.045 1.137-1.404.24-.36.48-.3.81-.18.328.12 2.09.985 2.448 1.164.36.18.598.27.687.42.09.15.09.87-.207 1.706Z"/>
+  </svg>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.112.4/dist/umd/supabase.js"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/render.js"></script>
+<script src="js/ui.js"></script>
+
+</body>
+</html>

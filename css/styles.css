@@ -1,0 +1,462 @@
+:root{
+    --ivory:#FBF8F3;
+    --card:#FFFDF9;
+    --sage:#5C6E5A;
+    --sage-deep:#3F4C3D;
+    --blush:#E8CFC7;
+    --espresso:#3A2E28;
+    --gold:#B8935A;
+    --gold-soft:#D9BE93;
+    --line:rgba(58,46,40,0.14);
+    --max:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ivory);
+    color:var(--espresso);
+    font-family:'Libre Franklin',sans-serif;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    font-size:12px;letter-spacing:0.22em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;
+  }
+
+  /* running stitch divider — signature element */
+  .stitch{
+    width:100%;height:14px;
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--gold) 0px, var(--gold) 10px,
+      transparent 10px, transparent 20px
+    );
+    background-size: 20px 2px;
+    background-repeat: repeat-x;
+    background-position: center;
+    opacity:0.6;
+  }
+  .stitch.vertical{
+    width:14px;height:100%;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      var(--gold) 0px, var(--gold) 10px,
+      transparent 10px, transparent 20px
+    );
+    background-size: 2px 20px;
+    background-position: center;
+  }
+
+  /* NAV */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,248,243,0.9);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    height:84px;
+  }
+  .logo{
+    font-family:'Fraunces',serif;font-size:26px;font-weight:500;
+    letter-spacing:0.01em;display:flex;align-items:center;gap:12px;
+  }
+  .logo-badge{
+    width:46px;height:46px;border-radius:50%;flex-shrink:0;
+    background-image:url(../assets/images/branding/logo-badge.png);
+    background-size:cover;background-position:center;background-repeat:no-repeat;
+  }
+  .logo span{color:var(--gold);font-style:italic;}
+  .navlinks{display:flex;gap:36px;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;}
+  .navlinks a{position:relative;padding-bottom:4px;transition:opacity .2s;}
+  .navlinks a:hover{opacity:0.6;}
+  .navcta{
+    border:1px solid var(--espresso);border-radius:2px;
+    padding:11px 22px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;
+    transition:all .25s ease;
+  }
+  .navcta:hover{background:var(--espresso);color:var(--ivory);}
+  .menu-toggle{display:none;background:none;border:none;font-size:24px;cursor:pointer;color:var(--espresso);}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    padding:96px 0 0;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(42px,5.6vw,74px);
+    font-weight:400;line-height:1.04;letter-spacing:-0.01em;
+    margin:18px 0 26px;
+  }
+  .hero h1 em{font-style:italic;color:var(--sage-deep);font-weight:400;}
+  .hero p.lede{
+    font-size:17px;line-height:1.7;color:rgba(58,46,40,0.78);
+    max-width:440px;margin-bottom:36px;
+  }
+  .hero-actions{display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--sage-deep);color:var(--ivory);
+    padding:16px 32px;border-radius:2px;font-size:13px;
+    letter-spacing:0.08em;text-transform:uppercase;
+    transition:background .25s ease;
+  }
+  .btn-primary:hover{background:var(--espresso);}
+  .btn-ghost{
+    font-size:13px;letter-spacing:0.06em;
+    border-bottom:1px solid var(--gold);padding-bottom:2px;
+  }
+  .hero-visual{
+    position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden;
+    background:linear-gradient(155deg,var(--blush) 0%, var(--gold-soft) 55%, var(--sage) 130%);
+  }
+  .hero-visual .ph-label{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    flex-direction:column;gap:10px;color:rgba(58,46,40,0.55);text-align:center;padding:24px;
+  }
+  .monogram{
+    font-family:'Fraunces',serif;font-style:italic;font-size:120px;color:rgba(255,253,249,0.55);
+    line-height:1;
+  }
+  .hero-note{
+    font-size:11px;letter-spacing:0.06em;color:rgba(58,46,40,0.5);
+    text-transform:uppercase;
+  }
+  /* Etapa 5: imagen real de "Colección permanente" (site_sections.image_url)
+     — .hero-visual ya es position:relative + overflow:hidden (arriba),
+     igual que .ph-label, así que ocupa exactamente el mismo espacio. Solo
+     se inserta cuando hay una imagen real (ver js/render.js); hasta
+     entonces sigue mostrándose el marcador de posición de arriba, sin
+     ningún cambio. */
+  .hero-visual img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  }
+  .hero-strip{margin-top:80px;}
+
+  /* PHILOSOPHY / STRIP */
+  .strip{
+    background:var(--sage-deep);color:var(--ivory);padding:64px 0;
+  }
+  .strip .wrap{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:48px;
+  }
+  .strip-item .num{font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--gold-soft);margin-bottom:12px;display:block;}
+  .strip-item h3{font-size:20px;font-weight:400;margin-bottom:10px;}
+  .strip-item p{font-size:14px;line-height:1.7;color:rgba(251,248,243,0.72);}
+
+  /* SECTION HEADS */
+  .section{padding:120px 0;}
+  .section.alt{background:var(--card);}
+
+  /* FEATURED SET */
+  .featured-set{padding:100px 0 60px;}
+  .set-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;
+    background:var(--card);border:1px solid var(--line);border-radius:4px;
+    overflow:hidden;
+  }
+  .set-media{position:relative;aspect-ratio:1/1;overflow:hidden;}
+  .set-media img{width:100%;height:100%;object-fit:cover;display:block;}
+  .set-badge{
+    position:absolute;top:20px;left:20px;
+    background:var(--gold);color:#fff;
+    font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+    padding:8px 16px;border-radius:2px;
+  }
+  .set-body{padding:24px 48px 24px 0;}
+  .set-body ul{list-style:none;margin:22px 0 30px;}
+  .set-body li{
+    font-size:15px;padding:9px 0;border-bottom:1px solid var(--line);
+    color:rgba(58,46,40,0.78);display:flex;align-items:center;gap:10px;
+  }
+  .set-body li::before{content:"✦";color:var(--gold);font-size:11px;}
+  .set-price-block{display:flex;align-items:baseline;gap:16px;margin-bottom:28px;flex-wrap:wrap;}
+  .price-old{
+    font-family:'Fraunces',serif;font-size:18px;color:rgba(58,46,40,0.4);
+    text-decoration:line-through;
+  }
+  .price-promo{
+    font-family:'Fraunces',serif;font-style:italic;font-size:34px;color:var(--sage-deep);
+  }
+  .set-save{
+    font-size:11px;letter-spacing:0.06em;text-transform:uppercase;
+    background:rgba(184,147,90,0.14);color:var(--gold);
+    padding:5px 12px;border-radius:2px;
+  }
+  @media (max-width:900px){
+    .set-grid{grid-template-columns:1fr;}
+    .set-body{padding:8px 32px 40px;}
+  }
+  .section-head{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    margin-bottom:56px;gap:24px;flex-wrap:wrap;
+  }
+  .section-head h2{font-size:clamp(32px,4vw,48px);font-weight:400;margin-top:12px;}
+  .section-head p{max-width:380px;font-size:15px;line-height:1.7;color:rgba(58,46,40,0.68);}
+
+  /* PRODUCT CARD BASE (Etapa 4H) — tamaño visual único, compartido entre
+   * layouts. Cualquier tarjeta que además lleve la clase "product-card"
+   * (hoy: .set-card en simple-grid, .card en variant-carousels — ver
+   * js/render.js) hereda este ancho y esta área de imagen sin que cada
+   * layout tenga que definir sus propios valores. La distribución (grid,
+   * carrusel) y todo lo demás (cuerpo, precio, botones, tono de fondo...)
+   * sigue siendo responsabilidad de cada layout: esto SOLO centraliza el
+   * tamaño, para que una categoría nueva con un layout ya existente lo
+   * herede automáticamente sin tocar CSS. */
+  .product-card{flex:0 0 340px;}
+  .product-card-media{aspect-ratio:1/1;}
+  .product-card-media img{width:100%;height:100%;object-fit:cover;}
+  @media (max-width:560px){
+    .product-card{flex-basis:82vw;}
+  }
+
+  /* PRODUCT GRID */
+  .grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:36px;
+  }
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:3px;overflow:hidden;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:0 22px 40px -20px rgba(58,46,40,0.25);}
+  .card-media{
+    /* Etapa 4H: aspect-ratio y el llenado de la imagen (width/height/
+     * object-fit) ya vienen de ".product-card-media" (ver PRODUCT CARD
+     * BASE) — aquí solo queda lo propio de este layout. */
+    position:relative;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(160deg,var(--blush),var(--ivory));
+  }
+  .card-media.tone-sage{background:linear-gradient(160deg,var(--sage),var(--ivory));}
+  .card-media.tone-gold{background:linear-gradient(160deg,var(--gold-soft),var(--ivory));}
+  .card-media .ph{
+    font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+    color:rgba(58,46,40,0.45);text-align:center;padding:0 20px;
+  }
+  .card-media .icon{font-family:'Fraunces',serif;font-style:italic;font-size:44px;color:rgba(255,253,249,0.7);margin-bottom:8px;}
+  .card-body{padding:26px 24px 28px;}
+  .card-body .eyebrow{font-size:11px;}
+  .card-body h3{font-size:21px;font-weight:400;margin:8px 0 10px;}
+  .card-body p{font-size:13.5px;line-height:1.65;color:rgba(58,46,40,0.65);margin-bottom:16px;}
+  /* Etapa 4I: "Qué incluye" propio de la variante. Mismos valores que
+   * ".set-card ul"/".set-card li"/".set-card li::before" (no se tocan esas
+   * reglas) — se duplican aquí a propósito, scopeadas a ".card-body", para
+   * no arriesgar el aspecto ya existente de "Qué incluye" en productos. */
+  .card-body ul{list-style:none;margin:0 0 20px;}
+  .card-body li{
+    font-size:13.5px;padding:7px 0;border-bottom:1px solid var(--line);
+    color:rgba(58,46,40,0.78);display:flex;align-items:center;gap:9px;
+  }
+  .card-body li::before{content:"\2726";color:var(--gold);font-size:10px;}
+  .card-foot{display:flex;justify-content:space-between;align-items:center;}
+  .price{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--sage-deep);}
+  .add-link{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;border-bottom:1px solid var(--espresso);padding-bottom:2px;}
+
+  /* PRODUCT TYPE CAROUSEL */
+  .product-type{margin-bottom:64px;}
+  .product-type:last-child{margin-bottom:0;}
+  .type-head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    margin-bottom:22px;gap:16px;
+  }
+  .type-head h3{font-size:24px;font-weight:400;}
+  .type-head .type-count{font-size:12px;letter-spacing:0.06em;color:rgba(58,46,40,0.5);text-transform:uppercase;}
+  .carousel-nav{display:flex;gap:8px;}
+  .cnav{
+    width:38px;height:38px;border-radius:50%;border:1px solid var(--line);
+    background:var(--card);cursor:pointer;font-size:16px;color:var(--espresso);
+    display:flex;align-items:center;justify-content:center;
+    transition:background .2s ease, border-color .2s ease;
+    flex-shrink:0;
+  }
+  .cnav:hover{background:var(--sage-deep);color:var(--ivory);border-color:var(--sage-deep);}
+  .carousel{
+    overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;
+    scrollbar-width:none;margin:0 -32px;padding:0 32px;
+  }
+  .carousel::-webkit-scrollbar{display:none;}
+  .carousel-track{display:flex;gap:24px;padding-bottom:4px;}
+  /* Etapa 4H: el ancho (flex-basis) ya viene de ".product-card" (ver
+   * PRODUCT CARD BASE) — aquí solo queda lo propio del scroll-snap. */
+  .carousel-track .card{scroll-snap-align:start;}
+  @media (max-width:560px){
+    .carousel{margin:0 -20px;padding:0 20px;}
+    .type-head h3{font-size:20px;}
+  }
+
+  /* PERSONALIZATION BANNER */
+  .personalize{
+    padding:110px 0;background:var(--sage-deep);color:var(--ivory);position:relative;
+  }
+  .personalize .wrap{display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:center;}
+  .personalize .eyebrow{color:var(--gold-soft);}
+  .personalize h2{font-size:clamp(30px,3.6vw,44px);font-weight:400;margin:14px 0 22px;line-height:1.15;}
+  .personalize p{font-size:15.5px;line-height:1.75;color:rgba(251,248,243,0.78);max-width:440px;margin-bottom:28px;}
+  .thread-visual{
+    aspect-ratio:5/4;border-radius:4px;
+    background:
+      repeating-linear-gradient(45deg, rgba(217,190,147,0.18) 0 2px, transparent 2px 22px),
+      linear-gradient(160deg,#4a5a48,#2f3a2d);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .thread-visual span{
+    font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:rgba(251,248,243,0.55);
+    letter-spacing:0.04em;
+  }
+  /* Etapa 5: imagen real de "Cómo personalizamos" (site_sections.image_url)
+     — mismo criterio que .hero-visual img arriba: solo se inserta cuando
+     hay una imagen real (ver js/render.js), llenando el mismo espacio que
+     hoy ocupa el marcador de posición (span de arriba). */
+  .thread-visual img{
+    width:100%;height:100%;object-fit:cover;display:block;border-radius:4px;
+  }
+
+  /* TESTIMONIAL / TRUST */
+  .quote-block{padding:100px 0;text-align:center;}
+  .quote-block blockquote{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:400;
+    font-size:clamp(24px,3vw,34px);line-height:1.5;max-width:760px;margin:0 auto 24px;
+    color:var(--sage-deep);
+  }
+  .quote-block cite{font-style:normal;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(58,46,40,0.55);}
+
+  /* FOOTER */
+  footer{background:var(--espresso);color:var(--ivory);padding:80px 0 32px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px;}
+  .foot-logo{font-family:'Fraunces',serif;font-size:24px;margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+  .foot-logo .logo-badge{width:52px;height:52px;}
+  .foot-logo span{color:var(--gold-soft);font-style:italic;}
+  footer p{font-size:14px;line-height:1.7;color:rgba(251,248,243,0.6);max-width:280px;}
+  footer h4{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:11px;font-size:14px;color:rgba(251,248,243,0.75);}
+  .foot-bottom{
+    border-top:1px solid rgba(251,248,243,0.14);padding-top:28px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-size:12px;color:rgba(251,248,243,0.45);
+  }
+
+  /* SETS DE BIENVENIDA */
+  /* Etapa 4H: el ancho (flex-basis) ya viene de ".product-card" (ver
+   * PRODUCT CARD BASE) — aquí solo queda lo propio del scroll-snap. */
+  .sets-track .set-card{scroll-snap-align:start;}
+  .set-card{
+    background:var(--card);border:1px solid var(--line);border-radius:3px;
+    overflow:hidden;display:flex;flex-direction:column;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .set-card:hover{transform:translateY(-6px);box-shadow:0 22px 40px -20px rgba(58,46,40,0.25);}
+  /* Etapa 4H: aspect-ratio y el llenado de la imagen (width/height/
+   * object-fit) ya vienen de ".product-card-media" (ver PRODUCT CARD
+   * BASE) — aquí solo queda lo propio de este layout. */
+  .set-card-media{position:relative;overflow:hidden;background:var(--ivory);}
+  .set-card-body{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1;}
+  .set-card-body h3{font-size:22px;font-weight:400;margin:8px 0 8px;}
+  .set-card-desc{font-size:13.5px;line-height:1.6;color:rgba(58,46,40,0.65);margin-bottom:16px;}
+  .set-card ul{list-style:none;margin:0 0 20px;}
+  .set-card li{
+    font-size:13.5px;padding:7px 0;border-bottom:1px solid var(--line);
+    color:rgba(58,46,40,0.78);display:flex;align-items:center;gap:9px;
+  }
+  .set-card li::before{content:"\2726";color:var(--gold);font-size:10px;}
+  .set-card .set-price-block{margin:auto 0 18px;}
+  .set-card .price-promo{font-size:28px;}
+  .set-card .price-ask{
+    font-family:'Fraunces',serif;font-style:italic;font-size:22px;color:var(--sage-deep);
+  }
+  .set-card .btn-primary{text-align:center;}
+  .sets-note{
+    font-size:12.5px;color:rgba(58,46,40,0.55);margin-top:24px;
+    font-style:italic;line-height:1.6;
+  }
+  /* Etapa 4H: el flex-basis móvil de .set-card ya viene de ".product-card"
+   * dentro de la media query de PRODUCT CARD BASE (arriba en este mismo
+   * archivo) — no se necesita un breakpoint propio aquí. */
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  @media (max-width:900px){
+    .navlinks{
+      display:none;
+      position:absolute;top:84px;left:0;right:0;
+      flex-direction:column;gap:0;
+      background:var(--ivory);
+      border-bottom:1px solid var(--line);
+      box-shadow:0 18px 30px -22px rgba(58,46,40,0.4);
+      padding:4px 32px 16px;
+    }
+    .navlinks.open{display:flex;}
+    .navlinks a{padding:15px 0;border-bottom:1px solid var(--line);}
+    .navlinks a:last-child{border-bottom:none;}
+    .menu-toggle{display:block;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1;aspect-ratio:16/10;}
+    .strip .wrap{grid-template-columns:1fr;gap:36px;}
+    .grid{grid-template-columns:repeat(2,1fr);}
+    .personalize .wrap{grid-template-columns:1fr;}
+    .thread-visual{order:-1;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:560px){
+    .grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr;gap:32px;}
+    .section{padding:80px 0;}
+    .wrap{padding:0 20px;}
+    /* la barra no cabia en 390px: el boton se salia y tapaba la hamburguesa */
+    .logo{font-size:20px;gap:9px;}
+    .logo-badge{width:38px;height:38px;}
+    .navcta{display:none;}
+    .navlinks{padding:4px 20px 16px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* Botón flotante de WhatsApp — fijo en la esquina inferior derecha, por
+     encima de todo el contenido pero sin taparlo (el resto de la página no
+     tiene nada fijo en esa esquina). Verde de marca de WhatsApp: es el único
+     color nuevo que se introduce, y solo se usa aquí. */
+  .whatsapp-float{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    background:#25D366;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 6px 18px rgba(58,46,40,0.35);
+    z-index:999;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .whatsapp-float:hover,
+  .whatsapp-float:focus-visible{
+    transform:scale(1.06);
+    box-shadow:0 8px 22px rgba(58,46,40,0.42);
+  }
+  .whatsapp-float svg{display:block;}
+  @media (max-width:560px){
+    .whatsapp-float{
+      right:14px;
+      bottom:calc(14px + env(safe-area-inset-bottom));
+      width:50px;
+      height:50px;
+    }
+    .whatsapp-float svg{width:24px;height:24px;}
+  }
